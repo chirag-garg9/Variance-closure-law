@@ -1,0 +1,27 @@
+# Auto-generated file
+# ViT-Tiny Split-CIFAR100 Configuration
+experiment: vit_cifar
+model_type: vit_tiny
+checkpoint_dir: checkpoints
+
+# Optimized for RTX 6000 Ada (48GB VRAM)
+batch_size: 128
+dataset: cifar100_split
+
+# Phase 1: Transfer Learning (AdamW)
+# Lower LR to preserve pre-trained ImageNet features
+task1_lr: 0.0005
+task1_epochs: 150
+
+# Phase 2: ODE Tracking (Strict SGD)
+# Small LR to ensure the Taylor expansion remains valid for dL/dt
+task2_lr: 0.0005
+task2_epochs: 12
+
+max_steps: 10000
+
+# Measurement & Logging
+log_interval: 1
+buffer_batches: 8
+
+results_path: results/full/vit_cifar100.csv

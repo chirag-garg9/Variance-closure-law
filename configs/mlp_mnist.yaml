@@ -1,0 +1,25 @@
+# Auto-generated file
+# ViT-Tiny Split-CIFAR100 Configuration
+experiment: mlp
+model_type: mlp
+checkpoint_dir: checkpoints/mlp
+
+# Optimized for RTX 6000 Ada (48GB VRAM)
+batch_size: 128
+dataset: mnist_split
+learning_rate: 0.001
+# Phase 1: Transfer Learning (AdamW)
+# Lower LR to preserve pre-trained ImageNet features
+task1_epochs: 50
+
+# Phase 2: ODE Tracking (Strict SGD)
+# Small LR to ensure the Taylor expansion remains valid for dL/dt
+task2_epochs: 10
+
+max_steps: 2000
+
+# Measurement & Logging
+log_interval: 1
+buffer_batches: 8
+
+results_path: results/pca/mlp_mnist.csv

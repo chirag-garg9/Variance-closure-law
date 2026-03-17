@@ -1,0 +1,16 @@
+# configs/gnn_neurips_final.yaml
+experiment: "gnn_arxiv_pretrained"
+model_name: "GCN_Baseline"
+checkpoint_path: "checkpoints/ogbn_arxiv_gcn.pth"
+dataset: "ogbn-arxiv"
+
+# --- Architecture Dimensions ---
+hidden_channels: 256
+num_layers: 3
+dropout: 0.0
+
+# --- Phase 2: Sequential Optimization Parameters ---
+task2_steps: 2000          # UPGRADED: Proves long-term stability of the integral
+task2_lr: 0.001             # Standard sequential learning rate
+log_interval: 1            # Adjusted for 10k steps to keep CSV sizes manageable
+results_path: "results/grad/gnn_forgetting_ode_10k.csv"

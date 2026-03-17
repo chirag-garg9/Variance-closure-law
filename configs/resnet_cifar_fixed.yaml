@@ -1,0 +1,18 @@
+# Auto-generated file
+experiment: resnet_cifar_fixed
+batch_size: 128
+dataset: cifar10_split
+task1_lr: 0.001
+task2_lr: 0.001
+
+
+task1_epochs: 200
+task2_epochs: 60
+
+max_steps: 500
+
+log_interval: 0
+
+buffer_batches: 5
+
+results_path: results/fixed/resnet_cifar10_new.csv

@@ -1,0 +1,13 @@
+# Auto-generated file
+pyyaml
+pandas 
+numpy
+tqdm
+torch
+torchvision
+ogb
+torch_geometric
+datasets
+transformers
+matplotlib
+statsmodel
